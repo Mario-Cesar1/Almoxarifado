@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequisicaoTest", "RequisicaoTest\RequisicaoTest.csproj", "{03FD04CD-BD26-4D6C-80EC-BBFF5F92F25A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03FD04CD-BD26-4D6C-80EC-BBFF5F92F25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FD04CD-BD26-4D6C-80EC-BBFF5F92F25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FD04CD-BD26-4D6C-80EC-BBFF5F92F25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FD04CD-BD26-4D6C-80EC-BBFF5F92F25A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {384A9612-1EF2-4A46-AA0F-61C35A4D721A}
+	EndGlobalSection
+EndGlobal
