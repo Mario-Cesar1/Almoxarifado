@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tarde.cetafest\\source\\repos\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj": {}
+    "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tarde.cetafest\\source\\repos\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj": {
+    "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tarde.cetafest\\source\\repos\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj",
+        "projectUniqueName": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj",
         "projectName": "RequisicaoTest",
-        "projectPath": "C:\\Users\\tarde.cetafest\\source\\repos\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj",
-        "packagesPath": "C:\\Users\\tarde.cetafest\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tarde.cetafest\\source\\repos\\RequisicaoTest\\RequisicaoTest\\obj\\",
+        "projectPath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\RequisicaoTest\\RequisicaoTest\\RequisicaoTest.csproj",
+        "packagesPath": "C:\\Users\\manha.cetafest\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\manha.cetafest\\Documents\\GitHub\\Almoxarifado\\RequisicaoTest\\RequisicaoTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tarde.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\manha.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
