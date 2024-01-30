@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\manha.cetafest\\Documents\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj": {}
+    "C:\\Users\\mc735\\OneDrive\\Documentos\\Github\\Almoxarifado\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\manha.cetafest\\Documents\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj": {
+    "C:\\Users\\mc735\\OneDrive\\Documentos\\Github\\Almoxarifado\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\manha.cetafest\\Documents\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj",
+        "projectUniqueName": "C:\\Users\\mc735\\OneDrive\\Documentos\\Github\\Almoxarifado\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj",
         "projectName": "TestexUnit",
-        "projectPath": "C:\\Users\\manha.cetafest\\Documents\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj",
-        "packagesPath": "C:\\Users\\manha.cetafest\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\manha.cetafest\\Documents\\Análise do código\\TestexUnit\\TestexUnit\\obj\\",
+        "projectPath": "C:\\Users\\mc735\\OneDrive\\Documentos\\Github\\Almoxarifado\\Análise do código\\TestexUnit\\TestexUnit\\TestexUnit.csproj",
+        "packagesPath": "C:\\Users\\mc735\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mc735\\OneDrive\\Documentos\\Github\\Almoxarifado\\Análise do código\\TestexUnit\\TestexUnit\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\manha.cetafest\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mc735\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

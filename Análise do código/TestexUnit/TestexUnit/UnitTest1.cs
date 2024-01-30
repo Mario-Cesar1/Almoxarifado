@@ -65,14 +65,22 @@ namespace TestexUnit
 
             }
             [Fact]
-            public void CategoriaMotivo()
+            public void CT02_RN05_CategoriaMotivo()
             {
                 driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
+                Thread.Sleep(3000);
                 driver.FindElement(By.Id("categoriaMotivo")).Click();
                 {
                     var dropdown = driver.FindElement(By.Id("categoriaMotivo"));
                     dropdown.FindElement(By.XPath("//option[. = 'Gestão']")).Click();
+                }
+                driver.FindElement(By.Id("Motivo")).Click();
+                {
+                    var dropdown = driver.FindElement(By.Id("Motivo"));
+                    dropdown.FindElement(By.XPath("//option[. = 'Planejamento']")).Click();
+                    string motivoResultado1 = driver.FindElement(By.Id("Motivo")).GetAttribute("innerText");
+                    Assert.Contains("Planejamento", motivoResultado1);
                 }
                 driver.FindElement(By.Id("categoriaMotivo")).Click();
                 {
@@ -83,6 +91,8 @@ namespace TestexUnit
                 {
                     var dropdown = driver.FindElement(By.Id("Motivo"));
                     dropdown.FindElement(By.XPath("//option[. = 'Quebra de máquinas']")).Click();
+                    string motivoResultado2 = driver.FindElement(By.Id("Motivo")).GetAttribute("innerText");
+                    Assert.Contains("Quebra de máquinas", motivoResultado2);
                 }
                 driver.FindElement(By.Id("categoriaMotivo")).Click();
                 {
@@ -94,55 +104,91 @@ namespace TestexUnit
                 driver.FindElement(By.Id("categoriaMotivo")).Click();
                 {
                     var dropdown = driver.FindElement(By.Id("categoriaMotivo"));
-                    dropdown.FindElement(By.XPath("//option[. = 'Gestão']")).Click();
+                    dropdown.FindElement(By.XPath("//option[. = 'RP']")).Click();
                 }
                 driver.FindElement(By.Id("Motivo")).Click();
                 {
                     var dropdown = driver.FindElement(By.Id("Motivo"));
-                    dropdown.FindElement(By.XPath("//option[. = 'Planejamento']")).Click();
+                    dropdown.FindElement(By.XPath("//option[. = '']")).Click();
+                    string motivoResultado3 = driver.FindElement(By.Id("Motivo")).GetAttribute("innerText");
+                    Assert.Contains("", motivoResultado3);
                 }
+                driver.Quit();
+
             }
             [Fact]
-            public void Departamento()
+            public void CT03_RN06_Departamento()
             {
                 driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
+                Thread.Sleep(3000);
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).SendKeys("1");
+                string departamentoResultado1 = driver.FindElement(By.Id("departamento")).GetAttribute("value");
+                driver.FindElement(By.Id("idDepartamento")).Clear();
                 driver.FindElement(By.Id("departamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).SendKeys("2");
                 driver.FindElement(By.CssSelector(".grupo2 > span")).Click();
                 driver.FindElement(By.Id("departamento")).Click();
+                string departamentoResultado2 = driver.FindElement(By.Id("departamento")).GetAttribute("value");
+                driver.FindElement(By.Id("idDepartamento")).Clear();
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).SendKeys("3");
                 driver.FindElement(By.Id("departamento")).Click();
+                string departamentoResultado3 = driver.FindElement(By.Id("departamento")).GetAttribute("value");
+                driver.FindElement(By.Id("idDepartamento")).Clear();
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).SendKeys("4");
+                string departamentoResultado4 = driver.FindElement(By.Id("departamento")).GetAttribute("value");
                 driver.FindElement(By.Id("departamento")).Click();
+                driver.Quit();
+
+                Assert.Equal("Sec. do Trabalho", departamentoResultado1);
+                Assert.Equal("Sec. da Educação", departamentoResultado2);
+                Assert.Equal("Nat", departamentoResultado3);
+                Assert.Equal("", departamentoResultado4);
             }
             [Fact]
-            public void Funcionrio()
+            public void CT04_RN07_Funcionario()
             {
                 driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
+                Thread.Sleep(3000);
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("idFuncionario")).Click();
                 driver.FindElement(By.Id("idFuncionario")).SendKeys("1");
+                string funcionarioResultado1 = driver.FindElement(By.Id("NomeFuncionario")).GetAttribute("value");
+                driver.FindElement(By.Id("idFuncionario")).Clear();
                 driver.FindElement(By.CssSelector(".grupo5 > span")).Click();
                 driver.FindElement(By.Id("idFuncionario")).Click();
                 driver.FindElement(By.Id("idFuncionario")).SendKeys("2");
+                string funcionarioResultado2 = driver.FindElement(By.Id("NomeFuncionario")).GetAttribute("value");
+                driver.FindElement(By.Id("idFuncionario")).Clear();
                 driver.FindElement(By.Id("NomeFuncionario")).Click();
                 driver.FindElement(By.Id("idFuncionario")).Click();
                 driver.FindElement(By.Id("idFuncionario")).SendKeys("3");
-                driver.FindElement(By.Id("NomeFuncionario")).Click();
+                string funcionarioResultado3 = driver.FindElement(By.Id("NomeFuncionario")).GetAttribute("value");
+                driver.FindElement(By.Id("idFuncionario")).Clear();
+                driver.FindElement(By.Id("idFuncionario")).Click();
+                driver.FindElement(By.Id("idFuncionario")).SendKeys("4");
+                string funcionarioResultado4 = driver.FindElement(By.Id("NomeFuncionario")).GetAttribute("value");
+                driver.Quit();
+
+                Assert.Equal("João Vargas", funcionarioResultado1);
+                Assert.Equal("Maria Souza", funcionarioResultado2);
+                Assert.Equal("André Santos", funcionarioResultado3);
+                Assert.Equal("", funcionarioResultado4);
             }
             [Fact]
-            public void NumerosCamposID()
+            public void CT01_RN03_NumerosCamposID()
             {
                 driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
+                Thread.Sleep(3000);
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).SendKeys("1");
+                string idResultado1 = driver.FindElement(By.Id("idDepartamento")).GetAttribute("value");
+                driver.FindElement(By.Id("idDepartamento")).Clear();
                 driver.FindElement(By.CssSelector(".camposPrincipaisLinha1")).Click();
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).Click();
@@ -150,9 +196,14 @@ namespace TestexUnit
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).Click();
                 driver.FindElement(By.Id("idDepartamento")).SendKeys("2.7");
+                string idResultado2 = driver.FindElement(By.Id("idDepartamento")).GetAttribute("value");
+                driver.Quit();
+
+                Assert.IsType<int>(Convert.ToInt32(idResultado1));
+                Assert.IsType<int>(Convert.ToInt32(idResultado2));
             }
             [Fact]
-            public void NveldePrioridade()
+            public void NiveldePrioridadeUrgente()
             {
                 driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
@@ -163,48 +214,116 @@ namespace TestexUnit
                 driver.FindElement(By.Id("urgente")).Click();
             }
             [Fact]
-            public void Produtos()
+            public void CT05_RN08_Produtos()
             {
+                driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
+                driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
+                Thread.Sleep(3000);
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("1");
+                string produtoResultado1 = driver.FindElement(By.Id("DescricaoProduto")).GetAttribute("value");
+                string estoqueResultado1 = driver.FindElement(By.Id("Estoque")).GetAttribute("value");
+                driver.FindElement(By.Id("CodigoProduto")).Clear();
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("2");
+                string produtoResultado2 = driver.FindElement(By.Id("DescricaoProduto")).GetAttribute("value");
+                string estoqueResultado2 = driver.FindElement(By.Id("Estoque")).GetAttribute("value");
+                driver.FindElement(By.Id("CodigoProduto")).Clear();
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("3");
+                string produtoResultado3 = driver.FindElement(By.Id("DescricaoProduto")).GetAttribute("value");
+                string estoqueResultado3 = driver.FindElement(By.Id("Estoque")).GetAttribute("value");
+                driver.FindElement(By.Id("CodigoProduto")).Clear();
+                driver.FindElement(By.Id("CodigoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("4");
+                string produtoResultado4 = driver.FindElement(By.Id("DescricaoProduto")).GetAttribute("value");
+                string estoqueResultado4 = driver.FindElement(By.Id("Estoque")).GetAttribute("value");
+                driver.Quit();
+
+
+
+                Assert.Equal("Papel A4", produtoResultado1);
+                Assert.Equal("10", estoqueResultado1);
+                Assert.Equal("Mel doce", produtoResultado2);
+                Assert.Equal("5", estoqueResultado2);
+                Assert.Equal("Cadeira", produtoResultado3);
+                Assert.Equal("3", estoqueResultado3);
+                Assert.Equal("", produtoResultado4);
+                Assert.Equal("", estoqueResultado4);
+            }
+            [Fact]
+            public void CT06_RN09_Quantidade()
+            {
+                Thread.Sleep(3000);
                 driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("CodigoProduto")).Click();
                 driver.FindElement(By.Id("CodigoProduto")).SendKeys("1");
-                driver.FindElement(By.Id("DescricaoProduto")).Click();
+                string quantidadeResultado1 = driver.FindElement(By.ClassName("grupoQuantidade")).GetAttribute("style");
+                driver.FindElement(By.Id("CodigoProduto")).Clear();
                 driver.FindElement(By.Id("CodigoProduto")).Click();
                 driver.FindElement(By.Id("CodigoProduto")).SendKeys("2");
-                driver.FindElement(By.Id("DescricaoProduto")).Click();
+                string quantidadeResultado2 = driver.FindElement(By.ClassName("grupoQuantidade")).GetAttribute("style");
+                driver.FindElement(By.Id("CodigoProduto")).Clear();
                 driver.FindElement(By.Id("CodigoProduto")).Click();
-                driver.FindElement(By.Id("CodigoProduto")).SendKeys("3");
-                driver.FindElement(By.Id("DescricaoProduto")).Click();
+                driver.FindElement(By.Id("CodigoProduto")).SendKeys("1");
+                string quantidadeResultado3 = driver.FindElement(By.ClassName("grupoQuantidade")).GetAttribute("style");
+                driver.FindElement(By.Id("CodigoProduto")).Clear();
                 driver.FindElement(By.Id("CodigoProduto")).Click();
                 driver.FindElement(By.Id("CodigoProduto")).SendKeys("4");
-                driver.FindElement(By.CssSelector(".linhaAdicionarItens")).Click();
-                driver.FindElement(By.Id("DescricaoProduto")).Click();
+                string quantidadeResultado4 = driver.FindElement(By.ClassName("grupoQuantidade")).GetAttribute("style");
+                driver.FindElement(By.Id("CodigoProduto")).Clear();
+                driver.Quit();
+
+                Assert.Contains("block", quantidadeResultado1);
+                Assert.Contains("block", quantidadeResultado2);
+                Assert.Contains("block", quantidadeResultado3);
+                Assert.Contains("none", quantidadeResultado4);
             }
             [Fact]
-            public void Quantidade()
+            public void CT01_RN02_SelecionarCampos()
             {
                 driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
-                driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
-                driver.FindElement(By.Id("CodigoProduto")).Click();
-                driver.FindElement(By.Id("CodigoProduto")).SendKeys("3");
-            }
-            [Fact]
-            public void SelecionarCampo()
-            {
-                driver.Navigate().GoToUrl("https://danieljairton.github.io/Projetos%20SENAI/Almoxarifado/Almoxarifado-main/index.html");
+                Thread.Sleep(3000);
                 driver.Manage().Window.Size = new System.Drawing.Size(945, 1012);
                 driver.FindElement(By.Id("inpNumero")).Click();
+                string inpNumeroResultado = driver.FindElement(By.Id("inpNumero")).GetAttribute("style");
                 driver.FindElement(By.Id("idDepartamento")).Click();
+                string idDepartamentoResultado = driver.FindElement(By.Id("idDepartamento")).GetAttribute("style");
                 driver.FindElement(By.Id("departamento")).Click();
+                string departamentoResultado = driver.FindElement(By.Id("departamento")).GetAttribute("style");
                 driver.FindElement(By.Id("dataRequisicao")).Click();
+                string dataRequisicaoResultado = driver.FindElement(By.Id("dataRequisicao")).GetAttribute("style");
                 driver.FindElement(By.Id("idFuncionario")).Click();
+                string idFuncionarioResultado = driver.FindElement(By.Id("idFuncionario")).GetAttribute("style");
                 driver.FindElement(By.Id("NomeFuncionario")).Click();
+                string NomeFuncionarioResultado = driver.FindElement(By.Id("NomeFuncionario")).GetAttribute("style");
                 driver.FindElement(By.Id("cargo")).Click();
+                string cargoResultado = driver.FindElement(By.Id("cargo")).GetAttribute("style");
                 driver.FindElement(By.Id("categoriaMotivo")).Click();
+                string categoriaMotivoResultado = driver.FindElement(By.Id("categoriaMotivo")).GetAttribute("style");
                 driver.FindElement(By.Id("Motivo")).Click();
+                string MotivoResultado = driver.FindElement(By.Id("Motivo")).GetAttribute("style");
                 driver.FindElement(By.Id("DescricaoProduto")).Click();
+                string DescricaoProdutoResultado = driver.FindElement(By.Id("DescricaoProduto")).GetAttribute("style");
                 driver.FindElement(By.Id("CodigoProduto")).Click();
+                string CodigoProdutoResultado = driver.FindElement(By.Id("CodigoProduto")).GetAttribute("style");
+                driver.Quit();
+
+                Assert.Contains("lightgreen", inpNumeroResultado);
+                Assert.Contains("lightgreen", idDepartamentoResultado);
+                Assert.Contains("lightgreen", departamentoResultado);
+                Assert.Contains("lightgreen", dataRequisicaoResultado);
+                Assert.Contains("lightgreen", idFuncionarioResultado);
+                Assert.Contains("lightgreen", NomeFuncionarioResultado);
+                Assert.Contains("lightgreen", cargoResultado);
+                Assert.Contains("lightgreen", categoriaMotivoResultado);
+                Assert.Contains("lightgreen", MotivoResultado);
+                Assert.Contains("lightgreen", DescricaoProdutoResultado);
+                Assert.Contains("lightgreen", CodigoProdutoResultado);
+
+                
+
             }
             [Fact]
             public void CT09_RetanguloVermelho()
