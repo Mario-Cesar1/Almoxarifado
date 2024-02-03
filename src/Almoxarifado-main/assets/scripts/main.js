@@ -122,6 +122,89 @@ function carregarNomeFuncionarioAoAlterarIDDep(){
     })
 }
 
+
+
+function carregarProdutosPorID(){
+    const elementIdProd = document.getElementById("CodigoProduto");
+    elementIdProd.addEventListener("keyup", function(){
+        const valorPesquisar = elementIdProd.value;
+        const produtoEncontrado = produtos.find((obj)=>obj.idProduto==valorPesquisar);
+
+        if (produtoEncontrado!=undefined) {
+            document.getElementById("DescricaoProduto").value=produtoEncontrado.Descricao;
+            produtoEncontrado.Descricao;
+            document.getElementById("Estoque").value=produtoEncontrado.Estoque;
+            
+            let cor = verificarRegraPercentualEstoqueMinimo(produtoEncontrado);
+            const elementoImg = document.getElementById("imgStatus");
+            console.log(elementoImg)
+            if (cor=="verde") {
+                elementoImg.src="/assets/img/Verde1.png"
+            } else if (cor=="vermelho") {
+                elementoImg.src="/assets/img/Vemelho.png"
+            } else {
+                elementoImg.src="/assets/img/Amarelo.png"
+            }
+
+        } else{
+            const elementoImg = document.getElementById("imgStatus");
+            document.getElementById("DescricaoProduto").value="";
+            document.getElementById("Estoque").value="";
+            elementoImg.src="/assets/img/Branco.png";
+        }
+        
+    })
+}
+
+
+function verificarRegraPercentualEstoqueMinimo(pProduto){
+    let vPerc10 = Math.round(pProduto.EstoqueMinimo*10/100) + pProduto.EstoqueMinimo
+
+    if (pProduto.Estoque>vPerc10) {
+        return "verde";
+    } else if (pProduto.Estoque<pProduto.EstoqueMinimo) {
+        return "vermelho";
+    } else {
+        return "amarelo";
+    }
+}
+
+document.getElementById("BtnInserirItens").addEventListener('click', function(){
+
+    const tabelaItens = document.getElementById("tabelaItens")
+
+    let codigoProduto = document.getElementById("CodigoProduto").value;
+    let quantidade = document.getElementById("Quantidade").value;
+
+    const produtoEncontrado = produtos.find((obj) => obj.idProduto==codigoProduto);
+
+    const linha = document.createElement("tr");
+
+    const tdCodigo = document.createElement("td");
+    const tdDescricao = document.createElement("td");
+    const tdQuantidade = document.createElement("td");
+    const tdUnidade = document.createElement("td");
+    const tdPreco = document.createElement("td");
+    const tdTotal = document.createElement("td");
+
+    tdCodigo.innerHTML = codigoProduto;
+    tdDescricao.innerHTML = produtoEncontrado.Descricao;
+    tdQuantidade.innerHTML = quantidade;
+    tdUnidade.innerHTML = produtoEncontrado.Unidade;
+    tdPreco.innerHTML = "R$" + (produtoEncontrado.Preco).toFixed(2);
+    tdTotal.innerHTML = "R$" + (produtoEncontrado.Preco*quantidade).toFixed(2);
+
+    linha.appendChild(tdCodigo);
+    linha.appendChild(tdDescricao);
+    linha.appendChild(tdQuantidade);
+    linha.appendChild(tdUnidade);
+    linha.appendChild(tdPreco);
+    linha.appendChild(tdTotal);
+
+    tabelaItens.appendChild(linha);
+})
+
+carregarProdutosPorID();
 carregarCategoria();
 adicionarCorFundoAofocar();
 adicionartCampoAceitarSomenteInteiro();
